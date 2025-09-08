@@ -2,7 +2,8 @@ AM_CFLAGS = \
 	$(libfuse_CFLAGS) \
 	$(libimobiledevice_CFLAGS) \
 	$(libplist_CFLAGS) \
-	-g
+	-g \
+        -DFUSE_DARWIN_ENABLE_EXTENSIONS=0
 
 AM_LDFLAGS = \
 	$(libfuse_LIBS) \

@@ -1,0 +1,9 @@
+prefix=/usr/local
+libdir=${prefix}/lib
+includedir=${prefix}/include/fuse
+
+Name: fuse-t
+Description: A kext-less implementation of FUSE for macOS
+Version: 1.0.47
+Cflags: -D_FILE_OFFSET_BITS=64 -I"${includedir}"
+Libs: -L"${libdir}" -lfuse-t${Version}

@@ -12,9 +12,15 @@ AC_CONFIG_HEADERS([config.h])
 AC_PROG_CC
 AM_PROG_CC_C_O
 
+# Load specific version of fuse-t.
+PKG_PROG_PKG_CONFIG(,,[$srcdir])
+AC_SUBST([FUSE_T_VERSION], [1.0.47])
+AC_CONFIG_FILES([fuse-t.pc])
+
 # Checks for libraries.
 PKG_CHECK_MODULES(libimobiledevice, libimobiledevice-1.0 >= 1.3.0)
 PKG_CHECK_MODULES(libfuse, fuse3 >= 3.0.0)
+PKG_CHECK_MODULES(fuse_t, fuse-t)
 PKG_CHECK_MODULES(libplist, libplist-2.0 >= 2.2.0)
 
 # Checks for header files.
